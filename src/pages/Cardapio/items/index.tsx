@@ -2,6 +2,7 @@ import style from './Item.module.scss'
 import cardapio from 'data/cardapio.json'
 import Item from './item'
 import { useState, useEffect } from "react";
+import { Cardapio } from 'types/Prato';
 
 
 interface Props {
@@ -24,7 +25,7 @@ interface Props {
       return true;
     }
   
-    function ordenar(novaLista: typeof cardapio) {
+    function ordenar(novaLista: Cardapio) {
       switch(ordenador) {
         case 'porcao': 
           return novaLista.sort((a, b) => a.size > b.size ? 1 : -1);
